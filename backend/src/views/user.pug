@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1 #{user.name} (#{user.age})
+  p Bio: #{user.bio}
+  h2 Events (#{user.events.length})
+
+  each event in user.events
+    h3 #{event.filename}
+    if event.likedBy.length == 0
+      p no event liked yet!
+    else
+      p #{event.likedBy.map(user => user.name).join(', ')}
