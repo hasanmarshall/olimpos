@@ -23,7 +23,7 @@
       "pretty-quick --staged"
     ]
   },
-  "author": "Armagan Amcalar <armagan@amcalar.com>",
+  "author": "Hasan Ekiz",
   "license": "MIT",
   "dependencies": {
     "cookie-parser": "~1.4.4",

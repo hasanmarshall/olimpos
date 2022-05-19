@@ -45,9 +45,9 @@ class Company {
     return this.addresses
   }
 
-  async showEvent(event) {
-    this.shows.push(event)
-    event.shownBy.push(this)
+  async addEvent(event) {
+    this.adds.push(event)
+    event.addedBy.push(this)
   }
 }
 

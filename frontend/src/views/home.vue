@@ -21,15 +21,8 @@ export default {
 </script>
 
 <template lang="pug">
-#app
-  .header
-    h1(v-if="user") Welcome {{ user.name }}
+.home
     h1 Olimpos
-  .container
-    .row
-      div(v-for="user in users" :user="user")
-        UserCard(:user="user" v-if="user")
-  .footer
-    p Try your best baby
-
+    p The time is: {{ time }}
+    user-card(v-for="user in users" :user="user")
 </template>

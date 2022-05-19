@@ -17,12 +17,7 @@ const userSchema = new mongoose.Schema({
 })
 
 class User {
-  async addEvent(event) {
-    this.events.push(event)
-    await this.save()
-  }
-
-  async likeEvent(event) {
+  async likedEvents(event) {
     this.likes.push(event)
     event.likedBy.push(this)
 
