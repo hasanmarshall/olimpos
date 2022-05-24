@@ -23,7 +23,7 @@ services:
       # - MONGODB_USERNAME
       # - MONGODB_PASSWORD
       # - MONGODB_DATABASE
-      - MONGODB_CONNECTION_STRING=mongodb://mongo/olimpos
+      - MONGODB_CONNECTION_STRING=mongodb://mongo/hasan
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.backend.rule=(Host(`olimpos.localhost`) && PathPrefix(`/api`))"
@@ -33,6 +33,7 @@ services:
       - 35729:35729
     volumes:
       - ./backend/src:/app/src
+      - ./backend/test:/app/test
   mongo:
     image: mongo
     ports:

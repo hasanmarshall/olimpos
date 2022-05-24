@@ -6,7 +6,7 @@ const dbName = process.env.MONGODB_DATABASE
 let connectionString = process.env.MONGODB_CONNECTION_STRING
 
 if (!connectionString) {
-  connectionString = `mongodb+srv://${username}:${password}@cluster0.knvjh.gcp.mongodb.net/${dbName}?retryWrites=true&w=majority`
+  connectionString = `mongodb+srv://root:eXcPQLjYeW3OIn5p@cluster0.tdb5d.mongodb.net/hasan?retryWrites=true&w=majority`
 }
 
 mongoose.set('debug', true)
@@ -18,3 +18,5 @@ mongoose
   })
   .then(() => console.log('connection established'))
   .catch(console.log)
+
+module.exports = mongoose.connection
