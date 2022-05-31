@@ -16,7 +16,7 @@ const clientPromise = mongoose.connection.asPromise().then(connection => connect
 
 const indexRouter = require('./routes/index')
 const usersRouter = require('./routes/users')
-const eventsRouter = require('./routes/events')
+const photosRouter = require('./routes/photos')
 const accountRouter = require('./routes/account')
 
 const app = express()
@@ -24,7 +24,7 @@ const app = express()
 app.use(
   cors({
     origin: true,
-    creadentials: true,
+    credentials: true,
   })
 )
 
@@ -80,7 +80,7 @@ app.use('/api', (req, res, next) => {
 app.use('/api/', indexRouter)
 app.use('/api/account', accountRouter)
 app.use('/api/users', usersRouter)
-app.use('/api/events', eventsRouter)
+app.use('/api/photos', photosRouter)
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

@@ -1,28 +1,28 @@
 <script>
-import axios from 'axios'
-import UserCard from '@/components/user-card.vue' //baştaki @'i src'u refer etmek için kullanıyorsun
+import Counter from '@/components/counter.vue'
+import UserCard from '@/components/user-card.vue'
+import { mapActions } from 'vuex'
 
 export default {
-  name: 'Home-page',
-  components: {
-    UserCard,
-  },
+  name: 'Home',
+  components: { UserCard, Counter },
   data() {
     return {
-      users: [],
-      time: new Date(),
+      user: null,
     }
   },
   async created() {
-    const usersRequest = await axios.get('/api/users')
-    this.users = usersRequest.data
+    this.user = await this.fetchUser(this.$route.params.id)
+  },
+  methods: {
+    ...mapActions(['fetchUser']),
   },
 }
 </script>
 
 <template lang="pug">
-.home
+.about
     h1 Olimpos
-    p Here is the time: {{ time }}
-    UserCard(v-for="user in users" :user="user")
+    UserCard(:user="user" v-if="user")
+    Counter
 </template>

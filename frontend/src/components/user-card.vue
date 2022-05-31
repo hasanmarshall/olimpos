@@ -14,14 +14,13 @@ export default {
 .box
   h1 {{ user.name }} ({{ user.age }})
   p Bio: {{ user.bio || defaultBio }}
-  h2 Events ({{ user.events.length }})
+  h2 Photos ({{ user.photos.length }})
 
-  .event(v-for="event in user.events")
-    h3 {{ event.filename }}
-    p(v-if="!event.likedBy.length")
+  .photo(v-for="photo in user.photos")
+    p(v-if="!photo.likedBy.length")
       | no likes yet!
     p(v-else)
-      | {{ event.likedBy.map(user => user.name).join(', ') }}
+      | {{ photo.likedBy.map(user => user.name).join(', ') }}
 </template>
 
 <style lang="scss" scoped>
