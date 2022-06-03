@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import axios from 'axios'
 
+axios.defaults.baseUrl = process.env.VUE_APP_BASE_URL
+
 Vue.use(Vuex)
 
 const mutations = {

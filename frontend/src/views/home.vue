@@ -1,7 +1,7 @@
 <script>
 import Counter from '@/components/counter.vue'
 import UserCard from '@/components/user-card.vue'
-import { mapActions } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 
 export default {
   name: 'Home',
@@ -17,6 +17,9 @@ export default {
   methods: {
     ...mapActions(['fetchUser']),
   },
+  computed: {
+    ...mapState(['user']),
+  },
 }
 </script>
 
@@ -24,5 +27,8 @@ export default {
 .about
     h1 Olimpos
     UserCard(:user="user" v-if="user")
+
+    //div(v-for="user in users" :user="user")
+      //UserCard(:user="user" v-if="user")
     Counter
 </template>

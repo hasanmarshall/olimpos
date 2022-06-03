@@ -1,5 +1,5 @@
 {
-  "name": "be208",
+  "name": "olimpos",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -23,7 +23,7 @@
       "pretty-quick --staged"
     ]
   },
-  "author": "Armagan Amcalar <armagan@amcalar.com>",
+  "author": "Hasan Ekiz",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.27.2",
@@ -33,6 +33,7 @@
     "debug": "^4.3.4",
     "express": "^4.18.1",
     "express-session": "^1.17.3",
+    "helmet": "^5.1.0",
     "http-errors": "^2.0.0",
     "mongoose": "^6.3.3",
     "mongoose-autopopulate": "^0.16.1",
