@@ -3,6 +3,7 @@ module.exports = defineConfig({
   transpileDependencies: true,
   devServer: {
     allowedHosts: 'all',
+    disableHostCheck: true,
     client: {
       webSocketURL: {
         hostname: '0.0.0.0',

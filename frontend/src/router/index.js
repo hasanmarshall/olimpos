@@ -14,7 +14,7 @@ export default function init(store) {
     routes: [
       {
         path: '/',
-        name: 'Home',
+        name: 'Homepage',
         component: Home,
       },
       {

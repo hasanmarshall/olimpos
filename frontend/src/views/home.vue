@@ -24,11 +24,8 @@ export default {
 </script>
 
 <template lang="pug">
-.about
+  .about
     h1 Olimpos
     UserCard(:user="user" v-if="user")
-
-    //div(v-for="user in users" :user="user")
-      //UserCard(:user="user" v-if="user")
     Counter
 </template>

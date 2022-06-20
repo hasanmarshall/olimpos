@@ -10,15 +10,13 @@ export default {
 
 <template lang="pug">
 .box
-  h1 {{ user.name }} ({{ user.age }})
-  p Bio: {{ user.bio || defaultBio }}
-  h2 Photos ({{ user.photos.length }})
-
-  .photo(v-for="photo in user.photos")
-    p(v-if="!photo.likedBy.length")
-      | no likes yet!
+  h2 {{user.name}} {{user.age}}
+    p(v-if="!user.email.length")
+      | Enter an email
     p(v-else)
-      | {{ photo.likedBy.map(user => user.name).join(', ') }}
+      | {{ user.email}}
+
+
 </template>
 
 <style lang="scss" scoped>
