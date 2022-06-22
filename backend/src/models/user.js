@@ -1,11 +1,10 @@
-const mongoose = require('mongoose')
-const autopopulate = require('mongoose-autopopulate')
-const passportLocalMongoose = require('passport-local-mongoose')
+const mongoose = require("mongoose");
+const autopopulate = require("mongoose-autopopulate");
+const passportLocalMongoose = require("passport-local-mongoose");
 
 const userSchema = new mongoose.Schema({
   name: {
     type: String,
-    unique: true,
     required: true,
   },
   age: {
@@ -16,41 +15,41 @@ const userSchema = new mongoose.Schema({
   photos: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'Photo',
+      ref: "Photo",
       autopopulate: true,
     },
   ],
   likes: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref: 'Photo',
+      ref: "Photo",
     },
   ],
   createdAt: {
     type: Date,
     default: new Date(),
   },
-})
+});
 
 class User {
   async addPhoto(photo) {
-    this.photos.push(photo)
-    await this.save()
+    this.photos.push(photo);
+    await this.save();
   }
 
   async likePhoto(photo) {
-    this.likes.push(photo)
-    photo.likedBy.push(this)
+    this.likes.push(photo);
+    photo.likedBy.push(this);
 
-    await photo.save()
-    await this.save()
+    await photo.save();
+    await this.save();
   }
 }
 
-userSchema.loadClass(User)
-userSchema.plugin(autopopulate)
+userSchema.loadClass(User);
+userSchema.plugin(autopopulate);
 userSchema.plugin(passportLocalMongoose, {
-  usernameField: 'email',
-})
+  usernameField: "email",
+});
 
-module.exports = mongoose.model('User', userSchema)
+module.exports = mongoose.model("User", userSchema);

@@ -24,8 +24,11 @@ export default {
 </script>
 
 <template lang="pug">
-  .about
-    h1 Olimpos
-    UserCard(:user="user" v-if="user")
-    Counter
+.about
+  h1 Olimpossss 
+     UserCard(:user="user" v-if="user")
+    
+    
+     Counter
+     Counter
 </template>

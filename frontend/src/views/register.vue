@@ -39,7 +39,7 @@ export default {
 <template lang="pug">
 .register
     form( @submit="submitLogin")
-      h1 Create a new account
+      h1 Create a new accountt
       label(for="name") Name:&nbsp;
         input(v-model="name" id="name" type="text" placeholder="Your name" required)
       label(for="age") Age:&nbsp;
